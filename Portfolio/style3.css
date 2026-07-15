@@ -511,6 +511,86 @@ img { display: block; max-width: 100%; height: auto; }
 
 /* Active tab */
 
+/*=============== TIMELINE ===============*/
+.timeline__tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.timeline__tab {
+  background-color: var(--container-color);
+  border: 1px solid hsla(240, 8%, 50%, 0.15);
+  color: var(--text-color);
+  padding: .75rem 1.5rem;
+  border-radius: 2rem;
+  font: var(--font-semi-bold) var(--small-font-size) var(--second-font);
+  display: flex;
+  align-items: center;
+  column-gap: .5rem;
+  transition: background-color .4s, color .4s;
+}
+
+.timeline__tab.active-tab {
+  background-color: var(--first-color);
+  color: var(--body-color);
+}
+
+.timeline__content {
+  display: none;
+}
+
+.timeline__content.active-content {
+  display: block;
+}
+
+.timeline__item {
+  position: relative;
+  padding-left: 2rem;
+  padding-bottom: 2.5rem;
+  border-left: 2px solid hsla(240, 8%, 50%, 0.25);
+}
+
+.timeline__item:last-child {
+  border-left: 2px solid transparent;
+  padding-bottom: 0;
+}
+
+.timeline__item::before {
+  content: '';
+  position: absolute;
+  left: -7px;
+  top: 0;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--first-color);
+}
+
+.timeline__year {
+  color: var(--first-color-light);
+  font-size: var(--small-font-size);
+  font-weight: var(--font-medium);
+  margin-bottom: .5rem;
+}
+
+.timeline__title {
+  font-size: var(--h3-font-size);
+  margin-bottom: .25rem;
+}
+
+.timeline__place {
+  display: block;
+  color: var(--first-color);
+  font-size: var(--small-font-size);
+  margin-bottom: .5rem;
+}
+
+.timeline__description {
+  font-size: var(--small-font-size);
+  color: var(--text-color);
+}
 
 /*=============== SERVICES (Skills) ===============*/
 .services__container {
