@@ -1,4 +1,6 @@
 /*=============== HOME SPLIT TEXT ===============*/
+/* Tumhari current HTML mein split-text ke liye special spans/data-attributes nahi hain,
+   isliye yeh section abhi skip kar rahe hain. Agar chahiye to bata dena, add kar denge. */
 const { animate, text, stagger } =anime
 
 const { chars: chars1 } = text.split('.home__profession-1', {chars:true}) 
@@ -48,7 +50,24 @@ const swiperProjects = new Swiper('.projects__swiper', {
 
 
 /*=============== WORK TABS ===============*/
-/* FOR NOW EMPTY  */
+const tabs = document.querySelectorAll('[data-target]'),
+      tabContents = document.querySelectorAll('[data-content]')
+
+tabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+        const targetSelector = tab.dataset.target,
+              targetContent = document.querySelector(targetSelector)
+
+        // Disable all content and active tabs
+        tabContents.forEach((content) => content.classList.remove('work-active'))
+        tabs.forEach((t) => t.classList.remove('work-active'))
+
+        // Active the tab and corresponding content
+        tab.classList.add('work-active')
+        targetContent.classList.add('work-active')
+    })
+})
+
 
 /*=============== SERVICES ACCORDION ===============*/
 const servicesButtons = document.querySelectorAll('.services__button')
@@ -134,6 +153,7 @@ const scrollActive = () => {
 window.addEventListener('scroll', scrollActive)
 
 
+
 /*================ CUSTOM CURSOR ================*/
 const cursor = document.querySelector('.cursor')
 let mouseX = 0, mouseY = 0 // Store mouse position
@@ -185,23 +205,3 @@ sr.reveal(`.home__social, .home__cv`, {delay: 1500})
 sr.reveal(`.about__data`, {origin: 'left'})
 sr.reveal(`.about__image`, {origin: 'right'})
 sr.reveal(`.services__card`, {interval: 100})
-
-/*=============== TIMELINE TABS ===============*/
-const timelineTabs = document.querySelectorAll('.timeline__tab')
-const timelineContents = document.querySelectorAll('.timeline__content')
-
-timelineTabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-        const target = tab.dataset.target
-
-        timelineTabs.forEach(t => t.classList.remove('active-tab'))
-        tab.classList.add('active-tab')
-
-        timelineContents.forEach(content => {
-            content.classList.remove('active-content')
-            if (content.id === target) {
-                content.classList.add('active-content')
-            }
-        })
-    })
-})
