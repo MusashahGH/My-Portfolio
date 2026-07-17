@@ -207,68 +207,96 @@
             </div>
         </section>
 
-<!--==================== TIMELINE ====================-->
-<section class="timeline section">
-    <h2 class="section__title">My <span>Journey</span></h2>
-
-    <div class="timeline__tabs">
-        <button class="timeline__tab active-tab" data-target="education">
-            <i class="ri-graduation-cap-line"></i> Education
-        </button>
-        <button class="timeline__tab" data-target="experience">
-            <i class="ri-briefcase-line"></i> Experience
-        </button>
-    </div>
-
-    <div class="timeline__container container">
-
-        <div class="timeline__content active-content" id="education">
-            <div class="timeline__item">
-                <div class="timeline__year">2024 - Present</div>
-                <div class="timeline__info">
-                    <h3 class="timeline__title">Bachelors in Computer Science</h3>
-                    <span class="timeline__place">LEADS University, Lahore</span>
-                    <p class="timeline__description">Currently in 4th semester, building strong foundations in OOP, DSA, SQL, and Python.</p>
-                </div>
-            </div>
-
-            <div class="timeline__item">
-                <div class="timeline__year">2021 - 2023</div>
-                <div class="timeline__info">
-                    <h3 class="timeline__title">Intermediate (Science Group)</h3>
-                    <span class="timeline__place">Roots International College, Lahore</span>
-                    <p class="timeline__description">Completed intermediate studies with a focus on the science group subjects.</p>
-                </div>
-            </div>
-
-            <div class="timeline__item">
-                <div class="timeline__year">2019 - 2021</div>
-                <div class="timeline__info">
-                    <h3 class="timeline__title">Matriculation (Science Group)</h3>
-                    <span class="timeline__place">Unique High School, Lahore</span>
-                    <p class="timeline__description">Completed matriculation, laying the groundwork for further studies in science.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="timeline__content" id="experience">
-            <div class="timeline__item">
-                <div class="timeline__year">2024 - Present</div>
-                <div class="timeline__info">
-                    <h3 class="timeline__title">Academic Projects</h3>
-                    <span class="timeline__place">Self-Directed Learning</span>
-                    <p class="timeline__description">Building hands-on projects in Python, C++, and MySQL while learning data analysis tools like Pandas.</p>
-                </div>
-            </div>
-        </div>
-
-    </div>
-</section>
-
          <!--==================== WORK ====================-->
-         <!-- <section class="work section">
-         /* CURRENTLY EMPTY */
-         </section> -->
+         <section class="work section">
+            <h2 class="section__title">
+               <span>My</span>
+               <br>Journey
+            </h2>
+
+            <div class="work__container container grid">
+               <div class="work__tabs">
+                  <!-- Button Education -->
+                  <button class="work__button work-active" data-target="#education">
+                     education<i class="ri-graduation-cap-line"></i>
+                  </button>
+                  <!-- Button Experience-->
+                  <button class="work__button" data-target="#experience">
+                     experience<i class="ri-briefcase-3-line"></i>
+                  </button>
+               </div>
+
+               <div class="work__area">
+                  <div class="work__line"></div>
+
+                  <!-- CONTENT education -->
+                  <div class="work__content work-active" data-content="" id="education">
+                     <div class="work__card">
+                        <div class="work__data">
+                           <div>
+                              <h1 class="work__title">Bachelors in Computer Science</h1>
+                              <h3 class="work__subtitle">LEADS University, Lahore</h3>
+                           </div>
+
+                           <h2 class="work__year">2024 - Present</h2>
+                        </div>
+
+                        <p class="work__description">
+                           Currently in 4th semester, building strong foundations in OOP, DSA, SQL, and Python. Working on hands-on projects in data analysis and web development while preparing for data analytics internships.
+                        </p>
+                     </div>
+
+                     <div class="work__card">
+                        <div class="work__data">
+                           <div>
+                              <h1 class="work__title">Intermediate (Science Group)</h1>
+                              <h3 class="work__subtitle">Roots International College, Lahore</h3>
+                           </div>
+
+                           <h2 class="work__year">2021 - 2023</h2>
+                        </div>
+
+                        <p class="work__description">
+                           Completed intermediate studies in Pre-Engineering, covering Physics, Chemistry, and Mathematics.
+                        </p>
+                     </div>
+
+                     <div class="work__card">
+                        <div class="work__data">
+                           <div>
+                              <h1 class="work__title">Matriculation (Science Group)</h1>
+                              <h3 class="work__subtitle">Unique High School, Lahore</h3>
+                           </div>
+
+                           <h2 class="work__year">2019 - 2021</h2>
+                        </div>
+
+                        <p class="work__description">
+                           Completed matriculation in Science Group, laying the groundwork in Math and Science for further studies in Computer Science.
+                        </p>
+                     </div>
+                  </div>
+
+                  <!-- CONTENT experience -->
+                  <div class="work__content" data-content="" id="experience">
+                     <div class="work__card">
+                        <div class="work__data">
+                           <div>
+                              <h1 class="work__title">Academic Projects</h1>
+                              <h3 class="work__subtitle">Self-Directed Learning</h3>
+                           </div>
+
+                           <h2 class="work__year">2024 - Present</h2>
+                        </div>
+
+                        <p class="work__description">
+                           Building hands-on projects in Python, C++, and MySQL while learning data analysis tools like Pandas.
+                        </p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
 
         <!--==================== SERVICES ====================-->
         <section class="services section">
