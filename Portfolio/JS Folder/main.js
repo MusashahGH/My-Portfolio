@@ -1,6 +1,4 @@
 /*=============== HOME SPLIT TEXT ===============*/
-/* Tumhari current HTML mein split-text ke liye special spans/data-attributes nahi hain,
-   isliye yeh section abhi skip kar rahe hain. Agar chahiye to bata dena, add kar denge. */
 const { animate, text, stagger } =anime
 
 const { chars: chars1 } = text.split('.home__profession-1', {chars:true}) 
@@ -53,7 +51,37 @@ const swiperProjects = new Swiper('.projects__swiper', {
 /* FOR NOW EMPTY  */
 
 /*=============== SERVICES ACCORDION ===============*/
-/* FOR NOW EMPTY  */
+const servicesButtons = document.querySelectorAll('.services__button')
+
+servicesButtons.forEach(button => {
+  // Add your height to services info
+  const heightInfo = document.querySelector('.services__info')
+        heightInfo.style.height = heightInfo.scrollHeight + 'px'
+
+  button.addEventListener('click', () => {
+    const servicesCards = document.querySelectorAll('.services__card'),
+          currentCard = button.parentNode,
+          currentInfo = currentCard.querySelector('.services__info'),
+          isCardOpen = currentCard.classList.contains('services__open')
+
+    // close all other services info
+    servicesCards.forEach(card => {
+      card.classList.remove('services__open')
+      card.classList.add('services__close')
+
+      const info = card.querySelector('.services__info')
+            info.style.height = '0'
+    })
+
+    // Open only if not already open
+    if(!isCardOpen){
+      currentCard.classList.replace('services__close', 'services__open')
+      currentInfo.style.height = currentInfo.scrollHeight + 'px'
+    }
+
+  })
+})
+
 
 
 /*=============== TESTIMONIALS OF DUPLICATE CARDS ===============*/
@@ -106,8 +134,6 @@ const scrollActive = () => {
 window.addEventListener('scroll', scrollActive)
 
 
-
-/*=============== CUSTOM CURSOR ===============*/
 /*================ CUSTOM CURSOR ================*/
 const cursor = document.querySelector('.cursor')
 let mouseX = 0, mouseY = 0 // Store mouse position
